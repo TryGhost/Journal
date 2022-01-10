@@ -10,6 +10,11 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&family=Inter:wght@400;500;600;700;800&display=swap">
     <link rel="stylesheet" href="{{asset "built/screen.css"}}">
 
+    {{!-- Table of contents styles --}}
+    {{#is "post, page"}}
+        <link rel="stylesheet" type="text/css" href="{{asset "/css/toc.css"}}" />
+    {{/is}}    
+
     {{ghost_head}}
 </head>
 
@@ -99,6 +104,14 @@
     <script src="{{asset "built/main.min.js"}}"></script>
 
     <script src="https://cdn.cove.chat/comments.js" data-cove-id="4d52fb19f6e41a7f3cbbdf8dec58dd82" async></script>
+
+    {{!-- Table of contents js --}}
+    {{#is "post, page"}}
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.11.1/tocbot.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+        <script src="{{asset "js/toc.js"}}"></script>
+    {{/is}}
+
     {{ghost_foot}}
 </body>
 

@@ -42,12 +42,32 @@
             {{/if}}
         </header>
 
+        {{!-- Table of contents --}}
+        {{#if access}}
+            <aside class="article__toc article__toc--closed gh-canvas" hidden>
+                <nav>
+                    <h2 class="article__toc-heading">
+                        {{t "Table of contents"}}
+                        
+                        {{> icons/arrow-right}}
+                    </h2>
+                    
+                    <div class="article__toc-container js-toc"></div>
+                </nav>
+            </aside>
+        {{/if}}        
+
+        {{!-- Content --}}
         <div class="gh-content gh-canvas">
             {{content}}
+        </div>
+
+        {{!-- Comments --}}
+        <div class="gh-content gh-canvas">
             <br>
             <br>
             {{> comments}}
-        </div>
+        </div>        
 
         {{#is "post"}}
             <footer class="gh-article-footer gh-canvas">

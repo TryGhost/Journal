@@ -1,0 +1,198 @@
+/* -------------------------------------------------------------------------- */
+/* Table of contents
+/* -------------------------------------------------------------------------- */
+
+
+/* General */
+
+
+:root {
+    --post-toc-heading-color: var(--color-secondary-text, rgba(0, 0, 0, .54));
+    --post-toc-link-color: var(--color-secondary-text, rgba(0, 0, 0, .6));
+    --post-toc-link-hover-color: var(--ghost-accent-color);
+    --post-toc-link-current-color: var(--ghost-accent-color);    
+}
+
+@keyframes fadein {
+    0% { opacity: 0; visibility: hidden;}
+    100% { opacity: 1; visibility: visible;}
+}
+
+@keyframes fadeout {
+    0% { opacity: 1; visibility: visible;}
+    100% { opacity: 0; visibility: hidden;}
+}
+
+.fadein {
+    opacity: 1;
+    visibility: visible;
+    animation: fadein 0.3s ease-in-out;
+}
+
+.fadeout {
+    opacity: 0;
+    visibility: hidden;
+    animation: fadeout 0.2s ease-in-out;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+.visually-hidden {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important; /* Fix for https://github.com/twbs/bootstrap/issues/25686 */
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+  }
+
+
+/* Mobile styles */
+
+.article__toc {
+    position: relative;
+    font-size: 1.6rem;    
+    width: 100%;
+}
+
+.article__toc nav {
+    position: relative;
+    top: initial;
+    margin-inline-start: 0;
+    margin-top: 4rem;
+    max-height: initial;
+    max-width: initial;
+    grid-column: main-start/main-end;    
+    overflow: auto;
+}
+
+.article__toc-heading {
+    color: var(--post-toc-heading-color);
+    font-family: var(--font-base);
+    font-size: 1.4rem;
+    font-weight: bold;
+    letter-spacing: 0.075em;
+    text-transform: uppercase;
+    margin-top: 0;
+    margin-bottom: 1.2rem;
+}
+
+.article__toc ul,
+.article__toc ol,
+.article__toc li {
+    list-style: outside none none;
+    margin: 0;
+    padding: 0;
+}
+
+.article__toc a {
+	color: var(--post-toc-link-color);
+	display: block;
+    font-size: 1.6rem;
+	font-weight: 400;
+	line-height: 1.25em;
+	margin: 0;
+    margin-left: 0;
+	padding: .6rem 0;
+	text-decoration: none;
+	transition: all .1s ease-in-out;
+}
+
+.article__toc a:hover {
+    color: var(--post-toc-link-hover-color);
+    text-decoration: underline;
+    transition: all 0.2s linear;
+}
+
+.article__toc a.current {
+    color: var(--post-toc-link-current-color);
+    text-decoration: underline;
+    transition: all 0.2s linear;
+}    
+
+.article__toc li li a,
+.article__toc li li li a {
+	padding: .5rem 0;
+}
+
+.article__toc li li a::before,
+.article__toc li li li a::before {
+    content: "— ";
+    display: inline;
+    font-weight: 400;
+    opacity: .5;
+}    
+
+.article__toc li li li a {
+    margin-inline-start: 0;
+}
+
+ /* Mobile toggle */
+@media (max-width: 1199px) {
+    .article__toc nav {
+        border: 1px solid var(--color-light-gray);
+        border-radius: 6px;    
+        cursor: pointer;
+    }
+
+    .article__toc-container {
+        padding: 0 1.6rem 1.6rem;
+    }
+
+    .article__toc-heading {
+        display: flex;
+        align-items: center;
+        padding: 1.6rem;
+        margin-bottom: 0;
+    }
+
+    .article__toc-heading svg {
+        margin-left: 0.8rem;
+        width: 2rem;
+        height: 2rem;
+        transform: rotate(90deg);
+        transition: transform 0.1s linear;
+    }
+
+    .article__toc--closed .article__toc-container {
+        display: none;
+    }
+
+    .article__toc--closed .article__toc-heading svg {
+        transform: rotate(0deg);
+    }    
+}
+
+/* Desktop styles */
+@media (min-width: 1200px) {
+    .article__toc {
+        position: sticky;
+        top: 0rem;
+        height: 0;
+        font-size: initial;
+    }
+
+    .article__toc-heading svg {
+        display: none;
+    }
+
+    .article__toc nav {
+        position: absolute;
+        top: 0;
+        margin-right: 3.2rem;
+        margin-bottom: 0;
+        margin-top: 4rem;
+        max-height: calc(100vh - 5rem);
+        max-width: 29rem;
+        grid-column: wide-start / main-start;
+    }
+
+    .article__toc a {
+        font-size: 1.3rem;
+    }
+}
