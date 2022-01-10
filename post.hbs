@@ -42,6 +42,16 @@
             {{/if}}
         </header>
 
+        {{!-- Footnotes --}}
+        {{#if access}}
+            <aside class="article__footnotes gh-canvas" hidden>
+                <nav>
+                    <h2 class="article__footnotes-heading">{{t "Footnotes"}}</h2>                    
+                    <ol class="article__footnotes-container"></ol>
+                </nav>
+            </aside>
+        {{/if}}      
+        
         {{!-- Table of contents --}}
         {{#if access}}
             <aside class="article__toc article__toc--closed gh-canvas" hidden>
@@ -55,7 +65,7 @@
                     <div class="article__toc-container js-toc"></div>
                 </nav>
             </aside>
-        {{/if}}        
+        {{/if}}             
 
         {{!-- Content --}}
         <div class="gh-content gh-canvas">

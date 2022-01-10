@@ -1,16 +1,15 @@
 /* -------------------------------------------------------------------------- */
-/* Table of contents
+/* Table of contents & Footnotes sidebars
 /* -------------------------------------------------------------------------- */
-
 
 /* General */
 
 
 :root {
-    --post-toc-heading-color: var(--color-secondary-text, rgba(0, 0, 0, .54));
-    --post-toc-link-color: var(--color-secondary-text, rgba(0, 0, 0, .6));
-    --post-toc-link-hover-color: var(--ghost-accent-color);
-    --post-toc-link-current-color: var(--ghost-accent-color);    
+    --post-sidebar-heading-color: var(--color-secondary-text, rgba(0, 0, 0, .54));
+    --post-sidebar-link-color: var(--color-secondary-text, rgba(0, 0, 0, .6));
+    --post-sidebar-link-hover-color: var(--ghost-accent-color);
+    --post-sidebar-link-current-color: var(--ghost-accent-color);    
 }
 
 @keyframes fadein {
@@ -49,8 +48,111 @@
     clip: rect(0, 0, 0, 0) !important;
     white-space: nowrap !important;
     border: 0 !important;
-  }
+}
 
+/* -------------------------------------------------------------------------- */
+/* Footnotes
+/* -------------------------------------------------------------------------- */
+
+
+/* Hide on mobile */
+.article__footnotes {
+    display: none;
+}
+
+
+/* Desktop styles */
+@media (min-width: 1200px) {
+
+    .article__footnotes {
+        position: sticky;
+        top: 0rem;
+        display: grid;
+        font-size: initial;
+        width: 100%;
+        height: 0;
+    }
+    
+    .article__footnotes nav {        
+        position: absolute;
+        top: 0;
+        margin-left: 3.2rem;
+        margin-bottom: 0;
+        margin-top: 4rem;
+        max-height: calc(100vh - 5rem);
+        max-width: 29rem;
+        grid-column: main-end / wide-end;        
+        overflow: auto;
+    }
+    
+    .article__footnotes-heading {
+        color: var(--post-sidebar-heading-color);
+        font-size: 1.4rem;
+        font-weight: bold;
+        letter-spacing: 0.075em;
+        text-transform: uppercase;
+        margin-top: 0;
+        margin-bottom: 1.2rem;
+    }
+    
+    .article__footnotes ol {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .article__footnotes li {
+        position: relative;
+        color: var(--post-sidebar-link-color);
+        display: block;
+        font-size: 1.3rem;
+        font-weight: 400;
+        line-height: 1.25em;
+        margin: 0;
+        margin-left: 0;
+        text-decoration: none;
+        transition: all .1s ease-in-out;    
+        animation: fadein 0.3s ease-in-out;    
+    }
+
+    .article__footnotes li .article__footnotes-counter {
+        float: left;
+        padding-right: 0.6rem;
+        font-size: 1.3rem;
+        font-weight: 400;
+        line-height: 1.5em;        
+    }
+
+    .article__footnotes li p + p {
+        margin-top: 0.8rem;
+    }
+    
+    .article__footnotes li p {
+        color: var(--post-sidebar-link-color);
+        display: block;
+        font-size: 1.3rem;
+        font-weight: 400;
+        line-height: 1.5em;
+        margin: 0;
+        margin-left: 0;
+        text-decoration: none;
+    }
+
+    .article__footnotes li p a {
+        color: var(--ghost-accent-color);
+        text-decoration: underline;
+    }
+
+    .article__footnotes .footnote-backref {
+        display: none;
+    }
+}
+
+
+
+/* -------------------------------------------------------------------------- */
+/* Table of contents
+/* -------------------------------------------------------------------------- */
 
 /* Mobile styles */
 
@@ -72,8 +174,7 @@
 }
 
 .article__toc-heading {
-    color: var(--post-toc-heading-color);
-    font-family: var(--font-base);
+    color: var(--post-sidebar-heading-color);
     font-size: 1.4rem;
     font-weight: bold;
     letter-spacing: 0.075em;
@@ -91,7 +192,7 @@
 }
 
 .article__toc a {
-	color: var(--post-toc-link-color);
+	color: var(--post-sidebar-link-color);
 	display: block;
     font-size: 1.6rem;
 	font-weight: 400;
@@ -104,13 +205,13 @@
 }
 
 .article__toc a:hover {
-    color: var(--post-toc-link-hover-color);
+    color: var(--post-sidebar-link-hover-color);
     text-decoration: underline;
     transition: all 0.2s linear;
 }
 
 .article__toc a.current {
-    color: var(--post-toc-link-current-color);
+    color: var(--post-sidebar-link-current-color);
     text-decoration: underline;
     transition: all 0.2s linear;
 }    
