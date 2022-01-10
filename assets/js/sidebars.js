@@ -9,6 +9,7 @@
         var footnotesNav = footnotesSidebar.querySelector("nav");
         var footnotesContainer = document.querySelector(".article__footnotes-container");
         var footnotesListElement = document.querySelector(".footnotes-list");
+        var mq = window.matchMedia("(min-width: 1200px)"); // Desktop media query. Needs to be in sync with css
     
         if (!footnotesSidebar || !footnotesNav || !footnotesContainer || !contentEl) {
             console.warn("Footnotes required elements not found! Disabling ...");
@@ -19,11 +20,16 @@
             // Post content does not have footnotes
             return;
         }    
-          
-    
+        
         // Footnotes links
         (contentEl.querySelectorAll(".footnote-ref a") || []).forEach(function(link) {
-            link.addEventListener("click", function(e) {
+          link.addEventListener("click", function(e) {
+
+                // Do nothing if not desktop view
+                if (!mq.matches) {
+                  return false;
+                }
+
                 e.preventDefault();
                 
                 var id = link.hash.split('').slice(1).join(''); // #fn2
@@ -51,8 +57,7 @@
             })
         })
     
-    
-        
+        // Ghost images
         const largeElements = document.querySelectorAll(
             ".kg-width-wide, .kg-width-full"
         );
@@ -157,7 +162,7 @@
             // Class to add to active links
             activeLinkClass: "current",
             // Headings offset between the headings and the top of the document (this is meant for minor adjustments).
-            headingsOffset: 12,
+            headingsOffset: 20,
         });
 
         var tocElement = document.querySelector(tocSelector);
@@ -260,13 +265,13 @@
         }, 300);
     }    
 
-    // Lodash isObject
+    // Lodash 5.0.0 isObject
     function isObject(value) {
         const type = typeof value
         return value != null && (type === 'object' || type === 'function')
     }
 
-    // Lodash debounce
+    // Lodash 5.0.0 debounce
     function debounce(func, wait, options) {
         let lastArgs,
           lastThis,
@@ -415,7 +420,7 @@
         return debounced
     }    
 
-    // Lodash throttle
+    // Lodash 5.0.0 throttle
     function throttle(func, wait, options) {
         let leading = true
         let trailing = true

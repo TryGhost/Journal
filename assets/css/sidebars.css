@@ -216,6 +216,10 @@
     transition: all 0.2s linear;
 }    
 
+.article__toc a:empty {
+    display: none;
+}
+
 .article__toc li li a,
 .article__toc li li li a {
 	padding: .5rem 0;
