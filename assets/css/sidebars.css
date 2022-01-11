@@ -277,6 +277,11 @@
     }    
 }
 
+.toc-fix + *,
+.toc-fix + [id]:not(:first-child) {
+    margin-top: 0;
+}  
+
 /* Desktop styles */
 @media (min-width: 1200px) {
     .article__toc {
@@ -303,10 +308,5 @@
 
     .article__toc a {
         font-size: 1.3rem;
-    }
-
-    .toc-fix + *,
-    .toc-fix + [id]:not(:first-child) {
-        margin-top: 0;
-    }    
+    }  
 }
