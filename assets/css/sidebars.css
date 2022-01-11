@@ -38,6 +38,10 @@
     display: none !important;
 }
 
+.invisible {
+    visibility: hidden !important;
+}
+
 .visually-hidden {
     position: absolute !important;
     width: 1px !important;

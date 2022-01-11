@@ -201,9 +201,21 @@
             const navRect = tocNav.getBoundingClientRect();
             let intersect = false;
 
+            tocContainer.classList.remove("invisible");
+
             // are we at the bottom of the post content
             if (navRect.bottom >= contentRect.bottom + 60) {
                 intersect = true;
+
+                if (
+                  !tocContainer.classList.contains("fadein") &&
+                  !tocContainer.classList.contains("fadeout")
+                ) {
+                    // First render, don't animate
+                    tocContainer.classList.add("invisible");
+                    return;
+                }                
+                
                 tocContainer.classList.toggle("fadeout", intersect);
                 tocContainer.classList.toggle("fadein", !intersect);
                 return;
