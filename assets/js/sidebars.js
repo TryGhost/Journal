@@ -165,8 +165,8 @@
             headingsOffset: 20,
         });
 
-        var tocElement = document.querySelector(tocSelector);
-        if (!tocElement || tocElement.childNodes.length === 0) {
+        var tocElement = document.querySelector(".toc-list");
+        if (!tocElement || tocElement.childNodes.length === 1) { // 1 because of the invisible heading we added to the content as a fix
             // Post content does not have headings
             return;
         }
