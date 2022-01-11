@@ -196,7 +196,7 @@
 
         // We need to hide the TOC when it intersect with wide/full images,
         // and when we're at the bottom of the post
-        function hideTOCWhenNeeded() {
+        function hideTOCWhenNeeded(event) {
             const contentRect = contentEl.getBoundingClientRect();
             const navRect = tocNav.getBoundingClientRect();
             let intersect = false;
@@ -208,13 +208,13 @@
                 intersect = true;
 
                 if (
+                  event === null &&
                   !tocContainer.classList.contains("fadein") &&
                   !tocContainer.classList.contains("fadeout")
                 ) {
                     // First render, don't animate
-                    tocContainer.classList.add("invisible");
-                    return;
-                }                
+                    tocContainer.classList.add("invisible"); 
+                }            
                 
                 tocContainer.classList.toggle("fadeout", intersect);
                 tocContainer.classList.toggle("fadein", !intersect);
@@ -272,7 +272,7 @@
 
         // First render
         setTimeout(() => {
-            hideTOCWhenNeeded();
+            hideTOCWhenNeeded(null);
             bindScrollEvent();
         }, 300);
     }    

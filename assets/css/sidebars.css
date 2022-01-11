@@ -32,6 +32,8 @@
     opacity: 0;
     visibility: hidden;
     animation: fadeout 0.2s ease-in-out;
+    pointer-events: none;
+    z-index: -1;
 }
 
 [hidden] {
@@ -39,7 +41,9 @@
 }
 
 .invisible {
+    z-index: -1 !important;
     visibility: hidden !important;
+    pointer-events: none !important;
 }
 
 .visually-hidden {
