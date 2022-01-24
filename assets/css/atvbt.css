@@ -82,7 +82,7 @@
     display: none;
 }
 
-.home-template .gh-featured .gh-card-content {
+.home-template .gh-featured .gh-card-has-image .gh-card-content {
     margin-right: 0;
 }
 
