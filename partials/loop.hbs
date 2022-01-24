@@ -1,21 +1,41 @@
-<article class="gh-card {{post_class}}">
+<article class="gh-card {{post_class}} {{#if feature_image}} gh-card-has-image {{/if}}">
     <a class="gh-card-link" href="{{url}}">
-        <header class="gh-card-header">
-            <h2 class="gh-card-title">{{title}}</h2>
-        </header>
+        <div class="gh-card-content">
+            <header class="gh-card-header">
+                <h2 class="gh-card-title">{{title}}</h2>
+            </header>
 
-        <div class="gh-card-excerpt">{{excerpt}}</div>
+            <div class="gh-card-excerpt">{{excerpt}}</div>
 
-        <footer class="gh-card-meta">
-            <time class="gh-card-date" datetime="{{date format="YYYY-MM-DD"}}">{{date}}</time>
-            —
-            <span class="gh-card-meta-wrapper">
-                <span class="gh-card-duration">{{reading_time}}</span>
+            <footer class="gh-card-meta">
+                <time class="gh-card-date" datetime="{{date format="YYYY-MM-DD"}}">{{date}}</time>
+                —
+                <span class="gh-card-meta-wrapper">
+                    <span class="gh-card-duration">{{reading_time}}</span>
 
-                {{^has visibility="public"}}
-                    {{> icons/star}}
-                {{/has}}
-            </span>
-        </footer>
+                    {{^has visibility="public"}}
+                        {{> icons/star}}
+                    {{/has}}
+                </span>
+            </footer>
+        </div>
+
+        {{#is "index"}}
+            {{#if feature_image}}
+                <figure class="gh-card-image">
+                    <img
+                        srcset="{{img_url feature_image size="s"}} 300w,
+                                {{img_url feature_image size="m"}} 720w,
+                                {{img_url feature_image size="l"}} 960w,
+                                {{img_url feature_image size="xl"}} 1200w,
+                                {{img_url feature_image size="xxl"}} 2000w"
+                        sizes="(max-width: 767px) 100vw, (max-width: 992px) 720px, 200px"
+                        src="{{img_url feature_image size="m"}}"
+                        alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}"
+                        loading="lazy"
+                    />
+                </figure>
+            {{/if}}     
+        {{/is}}   
     </a>
 </article>

@@ -1,0 +1,137 @@
+/* -------------------------------------------------------------------------- */
+/* Custom styles (overrides the default Journal theme)
+/* -------------------------------------------------------------------------- */
+
+/* Support featured image in post card */
+
+@keyframes gh-card-image-fadein {
+    0% { opacity: 0; visibility: hidden;}
+    100% { opacity: 1; visibility: visible;}
+}
+
+.hide-images .gh-card-image img {
+    opacity: 0;
+}
+
+.gh-card-image img.gh-card-image-fadein {
+    opacity: 1;
+    visibility: visible;
+    animation: gh-card-image-fadein 0.4s ease-in-out;
+}
+
+.gh-card-image-invisible {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.home-template .gh-feed .gh-card-link {
+    display: flex;
+    align-items: flex-start;
+}
+
+.home-template .gh-feed .gh-card-image {
+    position: relative;
+    width: 200px;
+    flex-shrink: 0;
+    padding: 0;
+}
+
+.home-template .gh-feed .gh-card-image::before {
+    content: "";
+    display: block;
+    padding-top: 80%; /* 5:4 aspect ratio */
+    background: var(--color-lighter-gray);
+}
+
+.home-template .gh-feed .gh-card-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.home-template .gh-feed .gh-card-image img::before {
+    font-size: 1.3rem;
+}
+
+.home-template .gh-feed .gh-card-has-image .gh-card-content {
+    margin-right: 2rem;
+}
+
+.home-template .gh-latest .gh-card-image {
+    position: relative;
+    width: 100%;
+    margin-top: 4rem;
+    padding-top: 56.25%; /* 16:9 aspect ratio */
+    background: var(--color-lighter-gray);
+}
+
+.home-template .gh-latest .gh-card-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media (max-width: 1200px) {
+    .home-template .gh-feed .gh-card-image {
+        width: 180px;
+    }
+
+    .home-template .gh-feed .gh-card-title {
+        font-size: 2.4rem;
+        line-height: 1.2;
+    }
+
+    .home-template .gh-feed .gh-card-excerpt {
+        font-size: 1.6rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        line-clamp: 3; 
+        -webkit-box-orient: vertical;
+    }
+}
+
+@media (max-width: 992px) {
+    .home-template .gh-feed .gh-card-title {
+        font-size: 3.4rem;
+    }
+
+    .home-template .gh-feed .gh-card-excerpt {
+        font-size: 1.8rem;
+        overflow: visible;
+        display: block;
+        -webkit-line-clamp: none;
+        line-clamp: none;
+    }
+
+    .home-template .gh-feed .gh-card-link {
+        flex-direction: column-reverse;
+    }    
+
+    .home-template .gh-feed .gh-card-image {
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+
+    .home-template .gh-feed .gh-card-image::before {
+        padding-top: 56.25%; /* 16:9 aspect ratio */
+    }
+
+    .home-template .gh-feed .gh-card-has-image .gh-card-content {
+        margin-right: 0;
+    }    
+}
+
+@media (max-width: 767px) {
+    .home-template .gh-latest .gh-card-image {
+        margin-top: 2.4rem;
+    }
+}
+
