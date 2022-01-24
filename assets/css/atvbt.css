@@ -77,6 +77,15 @@
     object-fit: cover;
 }
 
+
+.home-template .gh-featured .gh-card-image {
+    display: none;
+}
+
+.home-template .gh-featured .gh-card-content {
+    margin-right: 0;
+}
+
 @media (max-width: 1200px) {
     .home-template .gh-feed .gh-card-image {
         width: 180px;
