@@ -36,10 +36,10 @@
                     {{#unless @member}}
                         <a class="gh-head-btn" href="#/portal/signup" data-portal="signup">
                             {{> icons/email}}
-                            Subscribe
+                            {{t "Subscribe"}}
                         </a>
                     {{else}}
-                        <a class="gh-head-btn" href="#/portal/account" data-portal="account">Account</a>
+                        <a class="gh-head-btn" href="#/portal/account" data-portal="account">{{t "Account"}}</a>
                     {{/unless}}
                 </div>
             </div>
@@ -52,23 +52,23 @@
                 <div class="gh-outer">
                     <section class="gh-subscribe-inner">
                         {{^if @member}}
-                            <h3 class="gh-subscribe-title">Subscribe to {{@site.title}}</h3>
+                            <h3 class="gh-subscribe-title">{{t "Subscribe to "}}{{@site.title}}</h3>
 
-                            <div class="gh-subscribe-description">Don’t miss out on the latest issues. Sign up now to get access to the library of members-only issues.</div>
+                            <div class="gh-subscribe-description">{{t "Don’t miss out on the latest issues."}} {{t "Sign up now to get access to the library of members-only issues."}}</div>
 
                             <a class="gh-subscribe-input" href="#/portal/signup" data-portal="signup">
                                 <div class="gh-subscribe-input-text">
                                     {{> icons/email}}
-                                    jamie@example.com
+                                    {{t "jamie@example.com"}}
                                 </div>
-                                <div class="gh-subscribe-input-btn">Subscribe</div>
+                                <div class="gh-subscribe-input-btn">{{t "Subscribe"}}</div>
                             </a>
                         {{else}}
-                            <h3 class="gh-subscribe-title">Ready for unlimited access?</h3>
+                            <h3 class="gh-subscribe-title">{{t "Ready for unlimited access?"}}</h3>
 
-                            <div class="gh-subscribe-description">Upgrade to a paid account to get full access.</div>
+                            <div class="gh-subscribe-description">{{t "Upgrade to a paid account to get full access."}}</div>
 
-                            <a class="gh-subscribe-btn gh-btn gh-primary-btn" href="#/portal/account/plans" data-portal="account/plans">Upgrade now</a>
+                            <a class="gh-subscribe-btn gh-btn gh-primary-btn" href="#/portal/account/plans" data-portal="account/plans">{{t "Upgrade now"}}</a>
                         {{/if}}
                     </section>
                 </div>
