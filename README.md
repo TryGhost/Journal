@@ -1,5 +1,9 @@
 # Journal avaible for translation
-This is the Journal theme for Ghost CMS made availble for translations. It only contain one French json file but now all you have to do is customizing it to your needs and with your required language. 
+This is the Journal theme for Ghost CMS, made availble for translation. It only contains one French json file but now all you have to do is customizing it to your needs and with your required language. 
+
+Fork's credits as of march 2022 :
+- Conversion of the plain-english files translation-ready : Grégoire Fernandez
+- Translation from english to french : Gregoire Fernandez
 
 ----------------------------------------
 # Journal
