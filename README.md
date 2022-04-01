@@ -6,11 +6,14 @@ In order to make your own translation of Journal, download the file of this fork
 When your JSON file is created, you need to fill it with your translation. In order to do that, you can copy the french translation's content andreplace french bits with yours. Do not touch the english bits ! This will prevent Ghost from using your bits and force it to fall back onto the original language of the theme (which is english). 
 
 Ghost's documentation : 
+  https://ghost.org/docs/themes/helpers/translate/
 
 
-# Fork's credits as of march 2022 :
-- Conversion of the plain-english files translation-ready : Grégoire Fernandez
-- Translation from english to french : Gregoire Fernandez
+# Translation's credits as of march 2022 :
+- Dynamic translation from plain english made available by : Grégoire Fernandez
+- Default french translation written by : Grégoire Fernandez
+
+I didn't create these themes. They may be subject to licenses according to what the original author decided.
 
 ----------------------------------------
 # Journal
