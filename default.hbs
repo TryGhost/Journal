@@ -9,7 +9,42 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&family=Inter:wght@400;500;600;700;800&display=swap">
     <link rel="stylesheet" href="{{asset "built/screen.css"}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.11.1/tocbot.css">
+    <style>
+    .gh-content {
+        position: relative;
+     }
 
+    .gh-toc-sticky > .toc-list {
+        position: relative;
+    }
+
+    .toc-list {
+        overflow: hidden;
+        list-style: none;
+    }
+
+    @media (min-width: 1300px) {
+         .gh-sidebar-sticky {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            margin-top: 4vmin;
+            margin-left: var(--gap);
+            margin-right: var(--gap);
+            grid-column: full-start / main-start; /* Place the TOC to the left of the content */
+        }
+
+        .gh-toc-sticky {
+            position: sticky; /* On larger screens, TOC will stay in the same spot on the page */
+            top: 4vmin;
+        }
+    }
+
+    .gh-toc-sticky .is-active-link::before {
+        background-color: var(--ghost-accent-color); /* Defines TOC   accent color based on Accent color set in Ghost Admin */
+    }
+    </style>
     {{ghost_head}}
 </head>
 
@@ -97,6 +132,19 @@
     {{/is}}
 
     <script src="{{asset "built/main.min.js"}}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.12.3/tocbot.min.js"></script>
+
+    {{! Initialize Tocbot after you load the script }}
+    <script>
+        tocbot.init({
+            // Where to render the table of contents.
+            tocSelector: '.gh-toc-sticky',
+            // Where to grab the headings to build the table of contents.
+            contentSelector: '.gh-content',
+            // Which headings to grab inside of the contentSelector element.
+            headingSelector: 'h1, h2, h3, h4',
+        });
+    </script>
 
     {{ghost_foot}}
 </body>
