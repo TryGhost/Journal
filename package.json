@@ -44,17 +44,27 @@
         "custom": {
             "navigation_layout": {
                 "type": "select",
-                "options": ["Logo on the left", "Logo in the middle", "Stacked"],
+                "options": [
+                    "Logo on the left",
+                    "Logo in the middle",
+                    "Stacked"
+                ],
                 "default": "Stacked"
             },
             "title_font": {
                 "type": "select",
-                "options": ["Modern sans-serif", "Elegant serif"],
+                "options": [
+                    "Modern sans-serif",
+                    "Elegant serif"
+                ],
                 "default": "Modern sans-serif"
             },
             "body_font": {
                 "type": "select",
-                "options": ["Modern sans-serif", "Elegant serif"],
+                "options": [
+                    "Modern sans-serif",
+                    "Elegant serif"
+                ],
                 "default": "Modern sans-serif"
             }
         }
@@ -65,6 +75,7 @@
         "zip": "gulp zip"
     },
     "devDependencies": {
+        "@builder.io/partytown": "^0.8.0",
         "@tryghost/shared-theme-assets": "2.3.2",
         "autoprefixer": "10.4.14",
         "beeper": "2.1.0",

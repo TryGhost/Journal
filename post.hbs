@@ -25,9 +25,9 @@
             {{> "feature-image"}}
         </header>
 
-        <div class="gh-content gh-canvas">
+        <article data-clarity-region="article" class="gh-content gh-canvas">
             {{content}}
-        </div>
+        </article>
 
         {{#if comments}}
             <div class="gh-comments gh-canvas">
@@ -40,7 +40,7 @@
                 <div class="gh-navigation-previous">
                     {{#prev_post}}
                         <a class="gh-navigation-link" href="{{url}}">
-                            <span class="gh-navigation-label">{{> icons/arrow-left}} Previous issue</span>
+                            <span class="gh-navigation-label">{{> icons/arrow-left}} Previous article</span>
                             <h4 class="gh-navigation-title">{{title}}</h4>
                         </a>
                     {{/prev_post}}
@@ -51,7 +51,7 @@
                 <div class="gh-navigation-next">
                     {{#next_post}}
                         <a class="gh-navigation-link" href="{{url}}">
-                            <span class="gh-navigation-label">Next issue {{> icons/arrow-right}}</span>
+                            <span class="gh-navigation-label">Next article {{> icons/arrow-right}}</span>
                             <h4 class="gh-navigation-title">{{title}}</h4>
                         </a>
                     {{/next_post}}

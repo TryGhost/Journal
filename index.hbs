@@ -10,7 +10,7 @@
                             <div class="gh-article-meta">
                                 <span class="gh-card-date">Latest — <time datetime="{{date format="YYYY-MM-DD"}}">{{date}}</time></span>
                             </div>
-                            <h2 class="gh-article-title gh-card-title">{{title}}</h2>
+                            <h1 class="gh-article-title gh-card-title">{{title}}</h1>
                         </header>
 
                         <p class="gh-article-excerpt">{{excerpt}}</p>
@@ -31,7 +31,7 @@
 
         <div class="gh-wrapper">
             <section class="gh-section">
-                <h2 class="gh-section-title">More issues</h2>
+                <h2 class="gh-section-title">More articles</h2>
 
                 <div class="gh-feed">
                     {{^is "paged"}}
@@ -46,10 +46,10 @@
                 </div>
 
                 {{#match posts.length "=" 1}}
-                    Additional issues will be published soon.
+                    Additional articles will be published soon.
                 {{/match}}
 
-                <button class="gh-loadmore gh-btn">Load more issues</button>
+                <button class="gh-loadmore gh-btn">Load more articles</button>
             </section>
 
             <aside class="gh-sidebar">
@@ -74,7 +74,7 @@
                         {{^if @member.paid}}
                             <div class="gh-signup">
                                 {{^if @member}}
-                                    <p class="gh-signup-description">Sign up now to get access to the library of members-only issues.</p>
+                                    <p class="gh-signup-description">Jump in and stay ahead. Subscribe now to secure your spot now for the freshest news!</p>
 
                                     <a class="gh-subscribe-input" href="#/portal/signup" data-portal="signup">
                                         <div class="gh-subscribe-input-text">
@@ -117,7 +117,7 @@
                                 <a class="gh-topic-item" href="{{url}}">
                                     <h3 class="gh-topic-name">{{name}}</h3>
                                     <span class="gh-topic-count">
-                                        {{plural count.posts empty="0 issues" singular="% issue" plural="% issues"}}
+                                        {{plural count.posts empty="0 articles" singular="% article" plural="% articles"}}
                                     </span>
                                 </a>
                             {{/foreach}}
