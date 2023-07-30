@@ -1,15 +1,11 @@
-{{!< default}}
-
-{{#post}}
-
-<main id="gh-main" class="gh-main">
-    <article class="gh-article {{post_class}}">
+{{!< default}} {{#post}} <main id="gh-main" class="gh-main">
+    <article data-clarity-region="article" class="gh-article {{post_class}}">
 
         <header class="gh-article-header gh-canvas">
             <h1 class="gh-article-title">{{title}}</h1>
 
             {{#if custom_excerpt}}
-                <p class="gh-article-excerpt">{{custom_excerpt}}</p>
+            <p class="gh-article-excerpt">{{custom_excerpt}}</p>
             {{/if}}
 
             {{> "feature-image"}}
@@ -20,6 +16,6 @@
         </div>
 
     </article>
-</main>
+    </main>
 
-{{/post}}
+    {{/post}}
