@@ -8,6 +8,10 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+      - run: yarn global add gscan
+      - run: yarn test
+      - run: yarn zip
       - name: Create Release
         uses: "marvinpinto/action-automatic-releases@latest"
         with:
@@ -17,9 +21,3 @@ jobs:
           title: "release-v0.${{ github.run_number }}"
           files: |
             dist/*.zip
-      - name: Deploy Ghost Theme
-        uses: TryGhost/action-deploy-theme@v1
-        with:
-          api-url: ${{ secrets.GHOST_ADMIN_API_URL }}
-          api-key: ${{ secrets.GHOST_ADMIN_API_KEY }}
-
