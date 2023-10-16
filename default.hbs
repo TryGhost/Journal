@@ -6,6 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{meta_title}}</title>
     <link rel="stylesheet" href="{{asset "built/screen.css"}}">
+    <link 
+        rel="stylesheet" 
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/brands.min.css" 
+        integrity="sha512-+oRH6u1nDGSm3hH8poU85YFIVTdSnS2f+texdPGrURaJh8hzmhMiZrQth6l56P4ZQmxeZzd2DqVEMqQoJ8J89A==" 
+        crossorigin="anonymous" 
+        referrerpolicy="no-referrer" 
+    />
 
     {{ghost_head}}
 </head>
@@ -86,22 +93,29 @@
     {{/if}}
     {{/is}}
 
-    <footer class="gh-foot{{#unless @site.secondary_navigation}} no-menu{{/unless}} gh-outer">
+    <footer class="gh-foot{{#unless @site.navigation}} no-menu{{/unless}} gh-outer">
         <div class="gh-foot-inner gh-inner">
-            <div class="gh-copyright">
-                {{@site.title}} © {{date format="YYYY"}}
+            <div class="footer-logo">
+                {{#if @site.logo}}
+                    <img 
+                        src="{{@site.logo}}" 
+                        alt="{{@site.title}}" 
+                        class="footer-logo-img"
+                    />
+                {{else}}
+                    {{@site.title}} © {{date format="YYYY"}}
+                {{/if}}
             </div>
-            {{#if @site.secondary_navigation}}
-                <nav class="gh-foot-menu">
-                    {{navigation type="secondary"}}
-                </nav>
-            {{/if}}
-            <div class="gh-powered-by">
-                <a href="https://ghost.org/" target="_blank" rel="noopener">Powered by Ghost</a>
+
+            <nav class="gh-foot-menu">
+                {{navigation}}
+            </nav>
+
+            <div class="gh-foot-menu social-menu">
+                {{navigation type="secondary"}}
             </div>
         </div>
     </footer>
-
 </div>
 
 {{#is "post, page"}}

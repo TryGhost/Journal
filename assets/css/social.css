@@ -1,0 +1,111 @@
+.nav-facebook a,
+.nav-github a,
+.nav-instagram a,
+.nav-linkedin a,
+.nav-pinterest a,
+.nav-threads a,
+.nav-tiktok a,
+.nav-tumblr a,
+.nav-twitch a,
+.nav-twitter a,
+.nav-x a,
+.nav-youtube a {
+  font-size: 0 !important;
+}
+
+.nav-facebook a::before,
+.nav-github a::before,
+.nav-instagram a::before,
+.nav-linkedin a::before,
+.nav-pinterest a::before,
+.nav-threads a::before,
+.nav-tiktok a::before,
+.nav-tumblr a::before,
+.nav-twitch a::before,
+.nav-twitter a::before,
+.nav-x a::before,
+.nav-youtube a::before {
+  font-family: "Font Awesome 6 Brands";
+  display: inline-block;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+}
+
+.nav-facebook a::before {
+  content: "\f09a";
+}
+.nav-github a::before {
+  content: "\f09b";
+}
+.nav-instagram a::before {
+  content: "\f16d";
+}
+.nav-linkedin a::before {
+  content: "\f08c";
+}
+.nav-pinterest a::before {
+  content: "\f0d2";
+}
+.nav-threads a::before {
+  content: "\e618";
+}
+.nav-tiktok a::before {
+  content: "\e07b";
+}
+.nav-tumblr a::before {
+  content: "\f173";
+}
+.nav-twitch a::before {
+  content: "\f1e8";
+}
+.nav-twitter a::before {
+  content: "\f099";
+}
+.nav-x a::before {
+  content: "\e61b";
+}
+.nav-youtube a::before {
+  content: "\f167";
+}
+
+.gh-foot {
+  background: var(--ghost-accent-color);
+}
+
+.gh-foot-inner {
+  align-items: center;
+}
+
+.gh-foot a:hover {
+  color: var(--color-white)
+}
+
+.gh-foot-menu.social-menu .nav {
+  display: flex;
+  column-gap: 1.5rem;
+  justify-content: flex-end;
+}
+
+.gh-foot-menu.social-menu .nav li + li::before {
+  display: none;
+}
+
+.footer-logo-img {
+  display: block;
+  max-width: 3rem;
+}
+
+@media (max-width: 767px) {
+  .gh-foot-menu.social-menu .nav {
+    justify-content: center;
+    flex-direction: row!important;
+  }
+
+  .footer-logo-img {
+    margin: auto;
+  }
+}
