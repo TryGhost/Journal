@@ -575,3 +575,46 @@
         top: 1px;
     }
 }
+
+/* CUSTOM Ghost Themes */
+.start-here {
+    margin-bottom: 10rem;
+    gap: 3rem;
+    display: grid;
+    align-items: flex-start;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.start-here-card {
+    margin: 0!important;
+}
+
+.start-here-index {
+    float: left;
+    font-size: 10rem;
+    line-height: 0.8;
+}
+
+.start-here-title {
+    font-size: 2.2rem;
+}
+
+.start-here-excerpt {
+    font-size: 1.7rem;
+}
+
+@media (max-width: 991px) {
+    .start-here {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 767px) {
+    .start-here {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .start-here-index {
+        font-size: 8rem;
+    }
+}

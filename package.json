@@ -58,6 +58,11 @@
                 "type": "select",
                 "options": ["Modern sans-serif", "Elegant serif"],
                 "default": "Modern sans-serif"
+            },
+            "featured_tag": {
+                "type": "text",
+                "description": "Slug of the tag to use for featured posts",
+                "default": ""
             }
         }
     },
