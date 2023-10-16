@@ -1,6 +1,6 @@
 {
-    "name": "journal",
-    "description": "A Ghost theme",
+    "name": "journal-rewealth",
+    "description": "A Ghost theme, customized for Rewealth",
     "version": "1.0.0",
     "private": true,
     "engines": {
