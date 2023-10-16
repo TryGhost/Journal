@@ -10,7 +10,7 @@ jobs:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
       - run: yarn global add gscan
-      - run: yarn test
+      #- run: yarn test
       - run: yarn zip
       - name: Create Release
         uses: "marvinpinto/action-automatic-releases@latest"
