@@ -659,3 +659,9 @@
         top: 1px;
     }
 }
+
+/* Customization - Start */
+.post-template .gh-article-excerpt {
+  display: none;
+}
+/* Customization - End */
